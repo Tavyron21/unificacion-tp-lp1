@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TATETI</title>
+    <link rel="stylesheet" href="./TI.css">
+</head>
+<body>
+    <!-- Pantalla de Bienvenida -->
+    <div id="bienvenida">
+        <h1>Bienvenido</h1>
+        <h2>Selecciona un Modo</h2>
+        <button id="vsJugador">Jugador vs Jugador</button>
+        <button id="vsIA">Jugador vs IA</button>
+        <div id="dificultad" style="display: none;">
+            <h2>Selecciona la Dificultad</h2>
+            <button id="facil">Fácil</button>
+            <button id="medio">Medio</button>
+            <button id="dificil">Difícil</button>
+        </div>
+    </div>
+
+    <!-- Menú de Configuración -->
+    <div id="configuracion" style="display: none;">
+        <h2>Configuración</h2>
+        <label for="volumen">Volumen:</label>
+        <input type="range" id="volumen" min="0" max="1" step="0.1" value="0.5">
+        <button id="toggleMusica">Activar/Desactivar Música</button>
+        <button id="volverBienvenida">Volver a Bienvenida</button>
+    </div>
+
+    <!-- Música de fondo -->
+    <audio id="musica" loop>
+        <source src="musica_fondo.mp3" type="audio/mpeg">
+        Tu navegador no soporta la etiqueta de audio.
+    </audio>
+
+    <script src="./TE.js"></script>
+</body>
+</html>

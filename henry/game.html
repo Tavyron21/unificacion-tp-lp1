@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Ta-Te-Ti</title>
+    <link rel="stylesheet" href="Estilo.css">
+</head>
+<body>
+    <h1>Ta-Te-Ti</h1>
+
+    <!-- Botón para seleccionar el modo de juego -->
+    <div class="game-mode">
+        <button id="modoJugador">Jugar contra otro jugador</button>
+        <button id="modoIA">Jugar contra la IA</button>
+    </div>
+
+    <!-- Tablero de Ta-Te-Ti -->
+    <div id="tablero">
+        <div class="celda" data-index="0"></div>
+        <div class="celda" data-index="1"></div>
+        <div class="celda" data-index="2"></div>
+        <div class="celda" data-index="3"></div>
+        <div class="celda" data-index="4"></div>
+        <div class="celda" data-index="5"></div>
+        <div class="celda" data-index="6"></div>
+        <div class="celda" data-index="7"></div>
+        <div class="celda" data-index="8"></div>
+    </div>
+
+    <!-- Contador de resultados -->
+    <div id="contador" class="hidden"></div>
+
+    <!-- Botón para reiniciar el juego -->
+    <button id="reiniciar">Reiniciar Juego</button>
+
+</body>
+<script src="Tateti.js"></script>
+</html>

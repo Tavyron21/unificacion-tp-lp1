@@ -1,0 +1,151 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('./FONDO\ PROYECTO.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Contenedor principal del juego con margen transparente */
+.game-container {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+h1 {
+    color: white;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Formulario de registro */
+.register-form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #3498db;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+/* Ocultar elementos */
+.hidden {
+    display: none;
+}
+
+/* Estilos del tablero */
+#tablero {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.celda {
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.2);
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.celda:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+.simbolo-x {
+    color: red;
+}
+
+.simbolo-o {
+    color: rgb(81, 255, 0);
+}
+
+#contador {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Botón de reinicio */
+#reiniciar {
+    margin-top: 20px;
+}
+
+/* Contador de resultados */
+#contador {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Estilos para los botones de modo de juego */
+.game-mode button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #3498db;
+    color: white;
+    cursor: pointer;
+    margin: 5px;
+    transition: background 0.3s;
+}
+
+.game-mode button:hover {
+    background: #2980b9;
+}
+
+/* Estilos para la selección de símbolo en horizontal */
+.symbol-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.symbol-options label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
