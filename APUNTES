@@ -1,0 +1,182 @@
+//
+1. document.getElementById
+Función: Selecciona un elemento del DOM por su atributo id.
+Uso en el código:
+Se usa para obtener referencias a elementos HTML como el formulario de registro, los botones de modo de juego, el tablero, etc.
+
+
+
+Ejemplo:
+const nombre = document.getElementById('nombre').value; // Obtiene el valor del campo de nombre
+
+
+
+2. addEventListener
+Función: Permite agregar un "escuchador" de eventos a un elemento del DOM, como clics, cambios, envíos de formularios, etc.
+Uso en el código:
+Se usa para manejar interacciones del usuario, como hacer clic en un botón o enviar el formulario de registro.
+
+
+
+Ejemplo:
+document.getElementById('jugadorVsJugador').addEventListener('click', () => iniciarJuego('jugadorVsJugador'));
+
+
+
+3. event.preventDefault()
+Función: Evita el comportamiento predeterminado de un evento, como recargar la página al enviar un formulario.
+Uso en el código:
+Se usa en el formulario de registro para evitar que la página se recargue al enviar los datos.
+
+
+
+Ejemplo:
+event.preventDefault(); // Evita que el formulario recargue la página
+
+
+
+4. querySelector y querySelectorAll
+Función:
+querySelector: Selecciona el primer elemento que coincide con un selector CSS.
+querySelectorAll: Selecciona todos los elementos que coinciden con un selector CSS.
+Uso en el código:
+Se usa para seleccionar elementos como las celdas del tablero o los botones de selección de símbolo.
+
+
+Ejemplo:
+const simboloJugador = document.querySelector('input[name="simbolo"]:checked').value; // Obtiene el símbolo seleccionado
+
+
+
+5. localStorage
+Función:Permite almacenar datos en el navegador de manera persistente (incluso después de cerrar la pestaña o el navegador).
+Uso en el código:
+Se usa para guardar información como el nombre del jugador, el símbolo seleccionado, el modo de juego y el turno actual.
+
+
+
+Ejemplo:
+localStorage.setItem('nombre', nombre); // Guarda el nombre del jugador
+
+
+
+6. classList
+Función: Permite manipular las clases CSS de un elemento (agregar, eliminar, alternar, etc.).
+Uso en el código:
+Se usa para mostrar u ocultar pantallas (como la de registro, bienvenida y juego) agregando o quitando la clase hidden.
+
+
+
+Ejemplo:
+document.getElementById('registro').classList.add('hidden'); // Oculta la pantalla de registro
+
+
+
+7. textContent
+Función: Permite obtener o establecer el contenido de texto de un elemento.
+Uso en el código:
+Se usa para actualizar el contenido de elementos como los contadores de victorias y empates.
+
+
+
+Ejemplo:
+document.getElementById('nombreUsuario').textContent = nombre; // Muestra el nombre del jugador
+
+
+
+8. setAttribute y removeAttribute
+Función:
+setAttribute: Establece un atributo en un elemento.
+removeAttribute: Elimina un atributo de un elemento.
+Uso en el código:
+Se usa para marcar las celdas del tablero con el símbolo correspondiente (X o O) y evitar que se vuelvan a seleccionar.
+
+
+
+Ejemplo:
+celda.setAttribute('data-symbol', turnoActual); // Marca la celda con el símbolo actual
+celda.removeEventListener('click', manejarClickCelda); // Desactiva más clics en la celda
+
+
+
+9. setTimeout
+Función: Ejecuta una función después de un retraso especificado en milisegundos.
+Uso en el código:
+Se usa para simular el movimiento de la IA después de un segundo.
+
+
+
+Ejemplo:
+setTimeout(movimientoIA, 1000); // La IA realiza un movimiento después de 1 segundo
+
+
+
+10. Array.prototype.forEach
+Función: Ejecuta una función para cada elemento de un array.
+Uso en el código:
+Se usa para recorrer las celdas del tablero y asignarles eventos de clic.
+
+
+
+Ejemplo:
+celdas.forEach(celda => celda.addEventListener('click', manejarClickCelda)); // Asigna eventos a las celdas
+
+
+
+11. Array.prototype.filter
+Función: Crea un nuevo array con los elementos que cumplen una condición.
+Uso en el código:Se usa para filtrar celdas vacías en el tablero.
+
+
+
+Ejemplo:
+const celdasVacias = [...celdas].filter(celda => celda.textContent === ''); // Filtra celdas vacías
+
+
+
+12. alert
+Función: Muestra un cuadro de diálogo con un mensaje al usuario.
+Uso en el código:Se usa para notificar al usuario cuando hay un ganador o un empate.
+
+
+
+Ejemplo:
+Copy
+alert('¡Empate!'); // Muestra un mensaje de empate
+
+
+
+13. Funciones Personalizadas
+Funciones como iniciarJuego, inicializarTablero, manejarClickCelda, movimientoIA, verificarGanador, verificarEmpate, y reiniciarJuego:
+Función: Encapsulan la lógica del juego, como iniciar el juego, manejar clics en el tablero, realizar movimientos de la IA, verificar si hay un ganador o empate, y reiniciar el juego.
+Uso en el código:
+Estas funciones organizan y modularizan el código para que sea más fácil de mantener y entender.
+
+
+
+Ejemplo:
+function iniciarJuego(modo) {
+    localStorage.setItem('modo', modo); // Guarda el modo de juego
+    document.getElementById('bienvenida').classList.add('hidden'); // Oculta la pantalla de bienvenida
+    document.getElementById('juego').classList.remove('hidden'); // Muestra la pantalla del juego
+    inicializarTablero(); // Inicializa el tablero
+}
+
+
+
+RESUMEN DEL USO DE CODIGOS EN JS ._.
+
+Elemento/Función	Uso en el Código
+document.getElementById	Obtener elementos del DOM (formulario, botones, tablero, etc.).
+addEventListener	Manejar eventos como clics en botones o celdas del tablero.
+event.preventDefault()	Evitar que el formulario recargue la página.
+querySelector	Seleccionar elementos específicos (como el símbolo seleccionado).
+localStorage	Guardar datos del jugador (nombre, símbolo, modo de juego, etc.).
+classList	Mostrar u ocultar pantallas (registro, bienvenida, juego).
+textContent	Actualizar contadores de victorias y empates.
+setAttribute	Marcar celdas con el símbolo correspondiente (X o O).
+setTimeout	Simular el movimiento de la IA después de un segundo.
+Array.prototype.forEach	Recorrer y asignar eventos a las celdas del tablero.
+Array.prototype.filter	Filtrar celdas vacías en el tablero.
+alert	Notificar al usuario cuando hay un ganador o un empate.
+Funciones Personalizadas	Encapsular la lógica del juego (iniciar, reiniciar, verificar ganador, etc.).

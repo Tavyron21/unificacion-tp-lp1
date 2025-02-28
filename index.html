@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TATETI - Juego</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Pantalla de Registro -->
+    <div id="registro" class="screen">
+        <h1>Registro</h1>
+        <form id="registroForm">
+            <input type="text" id="nombre" placeholder="Nombre de usuario" required>
+            <input type="email" id="correo" placeholder="Correo electrónico" required>
+            <input type="password" id="contraseña" placeholder="Contraseña" required>
+            <div class="symbol-options">
+                <label><input type="radio" name="simbolo" value="X" required> X</label>
+                <label><input type="radio" name="simbolo" value="O"> O</label>
+            </div>
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
+    <!-- Pantalla de Bienvenida -->
+    <div id="bienvenida" class="screen hidden">
+        <h1>Bienvenido, <span id="nombreUsuario"></span></h1>
+        <div>
+            <h2>Modo de juego:</h2>
+            <button id="jugadorVsJugador">Jugador vs Jugador</button>
+            <button id="jugadorVsIA">Jugador vs IA</button>
+        </div>
+        <div id="dificultad" class="hidden">
+            <h2>Selecciona la dificultad:</h2>
+            <button id="facil">Fácil</button>
+            <button id="medio">Medio</button>
+            <button id="dificil">Difícil</button>
+        </div>
+    </div>
+    <!-- Pantalla de Juego -->
+    <div id="juego" class="screen hidden">
+        <h1>TATETI</h1>
+        <div id="contadores">
+            <p>Cuantes veces gane?: <span id="victoriasJugador1">0</span></p>
+            <p>Me ganaron: <span id="victoriasJugador2">0</span></p>
+            <p>Opá Empate: <span id="empates">0</span></p>
+        </div>
+        <div id="tablero">
+            <div class="celda" data-index="0"></div>
+            <div class="celda" data-index="1"></div>
+            <div class="celda" data-index="2"></div>
+            <div class="celda" data-index="3"></div>
+            <div class="celda" data-index="4"></div>
+            <div class="celda" data-index="5"></div>
+            <div class="celda" data-index="6"></div>
+            <div class="celda" data-index="7"></div>
+            <div class="celda" data-index="8"></div>
+        </div>
+        <button id="reiniciar">Reiniciar Juego</button>
+        <button id="volver">Volver</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
